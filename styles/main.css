@@ -1,0 +1,24 @@
+:root {
+    --fg-color: #333;
+    --bg-color: #fafafa
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --fg-color: #fafafa;
+        --bg-color: #333
+    }
+}
+
+html,
+body {
+    background-color: var(--bg-color);
+    color: var(--fg-color);
+    font-family: system-ui, sans-serif;
+}
+
+body {
+    display: grid;
+    margin: 1rem;
+    place-content: center;
+}
