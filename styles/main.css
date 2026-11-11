@@ -1,12 +1,16 @@
 :root {
     --fg-color: #333;
-    --bg-color: #fafafa
+    --bg-color: #fff;
+    --blue: #0d52bf;
+    --purple: #7239b3;
 }
 
 @media(prefers-color-scheme: dark) {
     :root {
         --fg-color: #fafafa;
-        --bg-color: #333
+        --bg-color: #333;
+        --blue: #64baff;
+        --purple: #cd9ef7;
     }
 }
 
@@ -15,10 +19,56 @@ body {
     background-color: var(--bg-color);
     color: var(--fg-color);
     font-family: system-ui, sans-serif;
+    margin: 0;
 }
 
-body {
+h1 {
+    margin-bottom: 0.5rem;
+}
+
+h1 + p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+a {
+    color: var(--blue);
+
+    &:visited {
+        color: var(--purple);
+    }
+}
+
+main {
     display: grid;
     margin: 1rem;
     place-content: center;
+}
+
+footer {
+    background-color: color-mix(in srgb, black 5%, transparent);
+    align-content: space-between;
+    bottom: 0;
+    display: flex;
+    flex-flow: row wrap;
+    gap: 2em;
+    line-height: 2em;
+    min-height: 2em;
+    padding: 1em;
+    position: fixed;
+    width: calc(100% - 2rem); /* FIXME: There has to be a better way */
+
+    p {
+        flex-grow: 1;
+        margin: 0;
+    }
+
+    ul {
+        display: flex;
+        flex-flow: wrap;
+        gap: 1em;
+        list-style: none;
+        margin: 0;
+        padding: 0;
+    }
 }
